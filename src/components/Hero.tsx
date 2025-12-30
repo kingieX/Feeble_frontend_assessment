@@ -71,7 +71,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="relative mx-auto mt-10 w-full">
+      <div id="hero-section" className="relative mx-auto mt-10 w-full">
         <div
           //   data-aos="fade-up"
           //   data-aos-delay="250"
@@ -91,6 +91,7 @@ const Hero = () => {
             alt="Bird1"
             data-aos="fade-up"
             data-aos-delay="300"
+            data-aos-anchor="#hero-section"
             className="pointer-events-none absolute left-50 top-40 w-fit md:w-fit hidden md:block"
           />
 
@@ -99,6 +100,7 @@ const Hero = () => {
             alt="Bird2"
             data-aos="fade-up"
             data-aos-delay="350"
+            data-aos-anchor="#hero-section"
             className="pointer-events-none absolute left-1/3 top-30 w-fit md:w-fit hidden md:block"
           />
 
@@ -107,6 +109,7 @@ const Hero = () => {
             alt="Bird3"
             data-aos="fade-up"
             data-aos-delay="300"
+            data-aos-anchor="#hero-section"
             className="pointer-events-none absolute right-85 top-45 w-fit md:w-fit hidden md:block"
           />
 
@@ -115,6 +118,7 @@ const Hero = () => {
             alt="Bird4"
             data-aos="fade-up"
             data-aos-delay="350"
+            data-aos-anchor="#hero-section"
             className="pointer-events-none absolute right-30 top-30 w-fit md:w-fit hidden md:block"
           />
 
