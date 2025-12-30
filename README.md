@@ -1,73 +1,137 @@
-# React + TypeScript + Vite
+# Coup – Pixel-Perfect Hero Section
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a pixel-perfect implementation of the **Hero section** from the Feeble Frontend Developer Assignment. It focuses on clean component architecture, modern TailwindCSS practices, smooth animations, and visual fidelity to the provided Figma design.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## React Compiler
+- **Vite** – Fast development server and build tool
+- **React** – Component-based UI development
+- **TypeScript** – Type safety and improved maintainability
+- **Tailwind CSS (Modern CSS-First Theming)** – Utility-first styling with `@theme` tokens
+- **AOS (Animate On Scroll)** – Scroll-based entrance animations
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Styling Approach
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project uses the **modern Tailwind CSS theming approach** (CSS-first), instead of defining colors in `tailwind.config.ts`.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Example:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```css
+@import "tailwindcss";
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+@theme {
+  --color-primary: #007aff;
+  --color-text: #1d2026;
+  --color-nav: #8c97a8;
+  --color-nav-hover: #1d2026;
+  --color-border-secondary: #6c788f;
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Why this approach?
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Centralized design tokens
+- Easier alignment with Figma variables
+- Cleaner, more scalable styling
+- Recommended for modern TailwindCSS projects
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Project Structure
+
 ```
+src/
+├── components/
+│   ├── Navbar.tsx
+│   ├── Hero.tsx
+│   ├── PrimaryButton.tsx
+│   └── SecondaryButton.tsx
+├── assets/
+│   ├── images (overlay, birds, badge)
+├── App.tsx
+├── main.tsx
+└── index.css
+```
+
+The codebase is intentionally **component-driven**, readable, and easy to extend.
+
+---
+
+## Features Implemented
+
+- Pixel-accurate hero layout based on Figma
+- Centered pill-style navigation bar
+- Animated CTA button with sliding background hover effect
+- Hero badge with icon
+- Decorative floating bird illustrations
+- Overlay image section with scroll prompt
+- Scroll-based animations using AOS
+- Fully responsive layout
+
+---
+
+## Animations
+
+Animations are implemented using **AOS** and CSS transforms:
+
+- Hero badge and text fade-up
+- Overlay image entrance from bottom
+- Staggered bird entrance animations
+- Button hover micro-interactions
+
+All animations are intentionally subtle to match SaaS landing page standards.
+
+---
+
+## Responsiveness
+
+- Desktop-first layout
+- Decorative elements hidden or repositioned on smaller screens
+- Flexible typography and spacing
+
+---
+
+## Setup Instructions
+
+```bash
+npm install
+npm run dev
+```
+
+To build for production:
+
+```bash
+npm run build
+```
+
+---
+
+## Notes & Assumptions
+
+- Icons and images were exported from the provided Figma design
+- Decorative assets use `pointer-events-none` to avoid interaction issues
+- The focus of this assignment is the **Hero section only**, as specified
+
+---
+
+## Live Deployment link
+
+Live: https://feeble-frontend-assessment.vercel.app/
+
+## Submission
+
+This project is intended for submission as part of the **Feeble Frontend Developer Assignment**.
+
+Required submission items:
+
+- Public GitHub repository
+- Live deployment URL
+- Resume
+
+---
+
+Built with attention to detail, clarity, and execution excellence — in line with Feeble’s values.
