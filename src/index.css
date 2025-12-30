@@ -13,3 +13,47 @@ body {
   background-color: #eef6ff;
   font-family: Inter, system-ui, sans-serif;
 }
+
+@keyframes flyBottomLeftToTopRight {
+  0% {
+    transform: translate(-100px, -20vh) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100vw, -120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes flyBottomRightToTopLeft {
+  0% {
+    transform: translate(100px, -20vh) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100vw, -120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-fly-tr {
+  animation: flyBottomLeftToTopRight 5s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+.animate-fly-tl {
+  animation: flyBottomRightToTopLeft 5s ease-in-out forwards;
+  animation-delay: 2.5s;
+}
